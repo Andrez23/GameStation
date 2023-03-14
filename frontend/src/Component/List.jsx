@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../Css/ListStyle.css";
 
 
-
 const List = () => {
 
     const [isMobile,setIsmobile ] = useState(false);
