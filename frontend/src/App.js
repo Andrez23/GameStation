@@ -4,7 +4,7 @@ import Catalogo from "./Component/Catalogo";
 import Contacto from "./Component/Contacto";
 import Home from "./Component/Home";
 import SobreNosotros from "./Component/SobreNosotros";
-import List from "./Component/List";
+import List from "./Navbar/List";
 import Registrate from "./Component/Registrate"
 
 const App=()=>{
