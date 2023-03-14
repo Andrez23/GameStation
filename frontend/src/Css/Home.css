@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+*{
+    text-decoration: none;
+}
+
+body{
+    background-color:#161815;
+}
+
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.header{
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4) ),
+        url( ../Imagenes/soln.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;    
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+
+}
+
+.header-txt{
+    width: 90%;
+}
+
+.header-txt h1{
+    font-size: 110px;
+    line-height: 130px;
+    /*color: ;*/
+    text-transform: uppercase; /*esto converte la letra en mayuscula*/
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 25px;
+}
+
+.header-txt p{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 35px;
+    border-left: 1px solid #ffffff;
+    padding-left: 15px;
+}
+
+.btn-1{
+    background: #fff; /* color de fondo */
+    color: #0d0c10; /* color de fuente */
+    border: 2px solid #909094; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 10px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-1:hover{
+    color: #fff;/* color de fuente hover */
+}
+
+.btn-1::after{
+    content: "";
+    background: #9191a9; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.btn-1:hover::after{
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
+
+.header-img{
+    width: 30%;
+    display: flex; /*lo pondra en horizontal */
+    flex-direction: column; /*lo pone en column */
+    align-items: flex-end;  /*lo pone al final de la derecha */
+}
+
+.red{
+    margin-bottom: 40px;
+    color: white;
+}
+
+
+.tours{
+    padding: 100px 0;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px; /*espacio entre letra y letra*/
+    font-size: 85px;
+    line-height: 95px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.btn-1{
+    margin-top: 20px;
+}
+
+p{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.tour-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.tour-1{
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4) ),
+        url( ../Imagenes/elden.jpg);
+        background-position:center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 350px;
+        width: 250px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 20px;
+        margin-left: 130px;
+    
+}
+
+.tour-2{
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4) ),
+        url( ../Imagenes/godr.webp);
+        background-position:center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 350px;
+        width: 250px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 20px;
+    
+}
+
+.tour-2:hover{
+  color: #070707;
+    }
+
+.tour-3{
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4) ),
+        url( ../Imagenes/gta5.jpg);
+        background-position:center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 350px;
+        width: 250px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 20px;
+    
+}
+
+.tour-4{
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4) ),
+        url( ../Imagenes/thel.jpg);
+        background-position:center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 350px;
+        width: 250px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 20px;
+        margin-right: 130px;
+    
+}
+
+.tour-txt{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #ffffff; 
+}
+
+.video{
+    padding: 150px 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url(../Imagenes/fonduco.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+.video-content{
+    display: flex;
+    align-items: center;
+}
+
+.video-1{
+    width: 50%;
+    padding-right: 70px;
+}
+
+.video-2{
+    width: 50%;
+    display: flex;
+}
+
+.v1{
+    width: 300px;
+    margin-right: 25px;
+    border-radius: 10px;
+}
+
+.v2{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.footer-bg{
+    text-align: center;
+    padding: 100px 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo-1{
+    margin-bottom: 15px;
+}
+
+.campo{
+    margin: 5px;
+    padding: 20px 15px;
+    width: 250px;
+    background-color: #0E0E0E0E;
+    border: 1px solid gray;
+    outline: none;/*esto desaparece la linea que tenemos al querer escribir*/
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.campoG{
+    margin: 5px;
+    padding: 20px 15px;
+    width: 500px;
+    background-color: #0E0E0E0E;
+    border: 1px solid gray;
+    outline: none;/*esto desaparece la linea que tenemos al querer escribir*/
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-txt{
+    text-align: center;
+    padding: 20px;
+    background-color: #070707;
+}
+
+.footer-txt p{
+    color: #ffffff;
+}
+
+/*responsive*/
+
+@media(max-width:928px){
+
+    .header{
+        min-height: 0vh;
+    }
+    .header-content{
+        flex-direction: column;
+        padding: 100px 30px 30px 30px;
+    }
+    .header-txt{
+        width: 100%;
+        text-align: center;
+    }
+    .header-txt h1{
+      font-size: 80px;
+      line-height: 90px;
+      margin-bottom: 15px;  
+    }
+    .header-txt p{
+        border: 0;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .campoG{
+        margin: 5px;
+        padding: 20px 15px;
+        width: 400px;
+        background-color: #0E0E0E0E;
+        border: 1px solid gray;
+        outline: none;/*esto desaparece la linea que tenemos al querer escribir*/
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 14px;
+    }
+    .btn-1{
+        margin: 20px 0;
+    }
+    .header-img{
+        width: 100%;
+        flex-direction: row;/*con esto podemos ponerlo horizontalmente*/
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .red{
+        margin: 10px;
+    }    
+    h2{
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .tour-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .tour-1{
+        margin: 0 0 10px; 
+    }
+    .tour-4{
+        margin: 0; 
+    }
+    .video{
+        padding: 30px;
+    }   
+    .video-content{
+        flex-direction: column;
+    }
+    .video-1{
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+    .video-2{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+   
+
+}
+
