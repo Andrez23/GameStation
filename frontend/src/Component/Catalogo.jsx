@@ -10,7 +10,7 @@ import "../Css/Catalogo.css";
 const Catalogo=()=>{
     return(
         <>
-      <h1>Catalogo</h1>
+      <h1>Putin</h1>
         </>
     )
 }
