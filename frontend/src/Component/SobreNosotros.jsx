@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import uuid from "react-uuid";
 import Swal from "sweetalert2";
+import "../Css/SobreNosotros.css"
 
 export const SobreNosotros = () => {
   const [tasks, setTasks] = useState([]);
@@ -69,7 +70,7 @@ export const SobreNosotros = () => {
   };
 
   return(
-    <div className="container">
+    <div className="contenedor aling-element-center">
       <div className="mt-3 justify-content-center d-flex align-items-center">
         <div className="col-6">
           <div className="card">

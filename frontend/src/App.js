@@ -3,7 +3,6 @@ import { Routes,Route } from "react-router-dom";
 import Catalogo from "./Component/Catalogo";
 import Contacto from "./Component/Contacto";
 import Home from "./Component/Home";
-
 import { SobreNosotros } from "./Component/SobreNosotros";
 import List from "./Navbar/List";
 import Categoria1 from "./Navbar/CatalogoA/Categoria1";
