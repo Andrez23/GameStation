@@ -96,7 +96,7 @@ const Home=()=>{
                         <textarea className="campoG" cols="30" rows="10" placeholder="Texto"></textarea>
                     
                 </form>
-                <input type="submit" className="btn-1" value="Enviar"></input>
+                <input type="submit" className="btn-4" value="Enviar"></input>
             </div>
             <div className="footer-txt">
                 <p>Derechos reservados -2023</p>

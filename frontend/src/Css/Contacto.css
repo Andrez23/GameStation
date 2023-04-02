@@ -1,0 +1,88 @@
+* > * {
+    margin: 0;
+}
+
+body{
+    background: rgb(16,0,36);
+    background: linear-gradient(90deg, rgba(16,0,36,1) 0%, rgba(9,102,121,0.8799894957983193) 53%, rgba(0,212,255,1) 100%);
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.col-1 h2{
+    color: #161815;
+ }
+
+.register{
+  max-width: 60%;
+  width: 100vw;
+  display:flex;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  /* box-shadow: 1px 3px 10px #e9ecef; */
+  background-color: white;
+  text-align: center;
+  margin: 5% 20% 5% 20%;
+}
+
+.register span{
+  color: black;
+}
+
+#form{
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
+#form >  input, .btn{
+  border: 1px solid #e9ecef;
+  padding: .9em 1em;
+}
+
+#form > input:focus{
+  outline: none;
+}
+
+#form > .btn{
+  background-color: #003049;
+  color: #e9ecef;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.flex{
+  display: flex;
+  gap: 4em;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.register .col-1{
+  margin: auto;
+  padding: 3em 0;
+}
+
+.register .col-2 img{
+  width: 480px;
+  height: 100%;
+  object-fit: cover;
+  align-self: flex-end;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+}
+
+@media screen and (min-width: 860px)  {
+  .register .col-2 img{
+    display: initial;
+  }
+}
