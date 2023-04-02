@@ -1,6 +1,6 @@
 import React from "react";
 import "../Css/Contacto.css";
-import img1 from "../Imagenes/ojito.jpg";
+import img1 from "../Imagenes/pixel3.jpg";
 import { useForm } from 'react-hook-form';
 
 export default function Contacto() {
