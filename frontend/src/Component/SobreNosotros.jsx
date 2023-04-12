@@ -70,12 +70,12 @@ export const SobreNosotros = () => {
   };
 
   return(
-    <div className="contenedor aling-element-center">
-      <div className="mt-3 justify-content-center d-flex align-items-center">
-        <div className="col-6">
-          <div className="card">
-            <h3 className="card-title text-center">CRUD</h3>
-            <div className="card-body">
+    <div className="contenedor">
+      <div className="uno">
+        <div className="dos">
+          <div className="tres">
+            <h3 className="cuatro">CRUD</h3>
+            <div className="crud-contenedor">
               <form onSubmit={actions}>
                 <div className="mb-3">
                   <input

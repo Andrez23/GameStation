@@ -22,7 +22,7 @@ body{
         background-repeat: no-repeat;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 70vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;    
 }
@@ -104,6 +104,7 @@ body{
 .tours{
     padding: 100px 0;
     text-align: center;
+    height: 100vh;
 }
 
 h2{
@@ -207,6 +208,7 @@ p{
 }
 
 .video{
+    height: 100vh;
     padding: 150px 0;
     background: linear-gradient(
         rgba(0,0,0,0.5),
@@ -246,6 +248,7 @@ p{
 .footer-bg{
     text-align: center;
     padding: 100px 0;
+    height: 100vh;
 }
 
 .form{
@@ -335,7 +338,7 @@ p{
 @media(max-width:928px){
 
     .header{
-        min-height: 0vh;
+        min-height: 100vh;
     }
     .header-content{
         flex-direction: column;
@@ -381,6 +384,9 @@ p{
     h2{
         font-size: 60px;
         line-height: 70px;
+    }
+    .tours{
+        height: 100%;
     }
     .tour-content{
         flex-direction: column;

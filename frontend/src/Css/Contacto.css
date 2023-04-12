@@ -1,5 +1,6 @@
 * > * {
     margin: 0;
+    padding: 0;
 }
 
 body{
@@ -15,7 +16,7 @@ body{
   text-align: center;
 }
 
-.col-1 h2{
+.col-1 h2{ /*titulo grande*/
     color: #161815;
  }
 
@@ -25,13 +26,12 @@ body{
   display:flex;
   border: 1px solid #e9ecef;
   border-radius: 5px;
-  /* box-shadow: 1px 3px 10px #e9ecef; */
   background-color: white;
   text-align: center;
   margin: 5% 20% 5% 20%;
 }
 
-.register span{
+.register span{ /*esto es el segundo titulo "el mas pequeño"*/
   color: black;
 }
 
@@ -41,7 +41,7 @@ body{
   margin: 2em auto;
 }
 
-#form >  input, .btn{
+#form >  input, .btn4{
   border: 1px solid #e9ecef;
   padding: .9em 1em;
 }
@@ -50,7 +50,7 @@ body{
   outline: none;
 }
 
-#form > .btn{
+#form > .btn4{
   background-color: #003049;
   color: #e9ecef;
   font-size: 1em;
@@ -85,4 +85,10 @@ body{
   .register .col-2 img{
     display: initial;
   }
-}
+  #form .btn4 {
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  }
+
