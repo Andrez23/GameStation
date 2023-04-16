@@ -13,7 +13,8 @@ app.use(express.json()); /*nos sirve apra convertir los datos a objetos json y l
 
 app.use(cors({origin: "*"})); /*Cors nos sirve para permitir conxoines desde cualqueier cliente */
 
-/*rutas o vistas */
+/*rutas, o vistas */
+app.use("/api/test",require ("../src/routes/test.route"))
 
 app.listen(app.get("Port"),() => {
     console.log("Servidor corriendo por puerto", app.get("Port"));
