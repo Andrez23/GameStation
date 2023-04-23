@@ -1,7 +1,7 @@
-const {Router}=require("express")
-const route= Router()
-const testCtrl=require("../controllers/test.controller")
+const { Router } = require("express")
+const testCtrl = require("../controllers/test.controller")
+const route = Router()
 
 route.get("/listar", testCtrl.listar);
 
-module.export= route
+module.exports = route
