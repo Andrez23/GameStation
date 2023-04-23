@@ -1,31 +1,31 @@
-const testCtrl={}
+const testCtrl = {}
 
-testCtrl.listar=(req,res)=>{
-    try{
+testCtrl.listar = (req, res) => {
+    try {
         res.json({
-            ok:true,
-            message:"probando ruta get listar"
+            ok: true,
+            message: "probando ruta get listar"
         })
-    } catch(error) {
+    } catch (error) {
         request.status(500).json({
-            ok:false,
-            message:error.message
+            ok: false,
+            message: error.message
         })
     }
 }
 
-testCtrl.Agregar=(req,res)=>{
-    try{
-        const {name,lastname}= req.body
-        const newItem= {name,lastname}
-        request.status(201).json({
-            ok:true,
+testCtrl.Agregar = (req, res) => {
+    try {
+        const { name, lastname } = req.body
+        const newItem = { name, lastname }
+        res.status(201).json({
+            ok: true,
             newItem
         })
-    }  catch (error){
-        request.status(500).json({
-            ok:false,
-            message:error.message
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            message: error.message
         })
     }
 
@@ -44,7 +44,7 @@ testCtrl.update = (req, res) => {
             message: error.message
         })
     }
-} 
+}
 
 testCtrl.delete = (req, res) => {
     try {
@@ -61,4 +61,4 @@ testCtrl.delete = (req, res) => {
     }
 }
 
-module.exports  = testCtrl
+module.exports = testCtrl

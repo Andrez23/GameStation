@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); /*nos sirve apra convertir los datos a objetos json y leerlos */
 
-app.use(cors({ origin: "*" })); /*Cors nos sirve para permitir conxoines desde cualqueier cliente */
+app.use(cors({ origin: "*" })); /*Cors nos sirve para permitir conexiones desde cualqueier cliente */
 
 /*rutas, o vistas */
 app.use("/api/test", require("./routes/test.route"))
