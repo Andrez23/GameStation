@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const URI= "mongodb://localhost/testcrud"
+const URI= "mongodb://127.0.0.1:27017/testcrud"
 
 const conn= async () => {
     try{
         const db = await mongoose.connect(URI,{
             useNewUrlParser: true,
-            useUnidiedTopoly: true,
+            useUnifiedTopology: true,
         });
         console.log("base de datos conectada",db.connection.name)
     } catch (error) {
