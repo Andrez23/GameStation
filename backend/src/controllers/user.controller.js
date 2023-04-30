@@ -1,8 +1,9 @@
 const userCtrl= {}
 const userModel = require("../models/user.model")
 
-UseCtrl.list = async(req, res) =>{
+userCtrl.list = async(req, res) =>{
     try{
+        const users = await userModel.find();
         res.json ({
             ok:true,
             users
@@ -31,7 +32,7 @@ userCtrl.listid= async (req, res) =>{
     } catch (error){
         res.status(500).json({
             ok:false,
-            message: error.message,
+            message: error.message
         });
     }
 };
@@ -109,3 +110,28 @@ userCtrl.update= async (req, res) => {
         });
     }
 }
+
+userCtrl.delete= async(req, res) =>{
+    try {
+        const{id}=req.params;
+        const user = await userModel.findById({_id:id});
+
+        if(!user){
+            return res.status(404).json({
+                ok:false,
+                message: "usuario no econtrado"
+            });
+        }
+        await user.deleteOne()
+        res.json({Ok: true, message: "Usuario eliminado"});
+
+    }catch (error) {
+        res.status(500).json({
+            ok: false,
+            message: error. message
+        });
+    }
+};
+
+
+module.exports = userCtrl;

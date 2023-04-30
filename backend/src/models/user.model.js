@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose')
-const mongoosePaginate = require('mongoose-paginate-v2');
+//const mongoosePaginate = require('mongoose-paginate-v2');
 
 const userSchema = new Schema({
     name:{
@@ -24,6 +24,6 @@ const userSchema = new Schema({
         timestamps: true
     });
 
-    userSchema.plugin(mongoosePaginate)
+    //userSchema.plugin(mongoosePaginate)
 
 module.exports = model('users', userSchema);

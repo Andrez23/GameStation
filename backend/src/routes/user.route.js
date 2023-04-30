@@ -1,15 +1,15 @@
-const {Router} = require("express")
-const userCtrl = require("../controller/user.controller");
-const validarCampos = require("../middleware/Validar");
-const route= Route();
+const { Router } = require("express");
+const userCtrl = require('../controllers/user.controller');
+//const validarCampos = require("../middleware/Validar");
+const route = Router();
 
-route.get("/list", userCtrl.list);                                       //enlista uaurios
-route.get("/userid/:id", userCtrl.listid);                                    //enlista por id
-route.post("/add", userCtrl.add);
-route.put("/update/:id", userCtrl.update);
-route.delete("/delete/:id",userCtrl.delete);
-
-
+route.get('/list', userCtrl.list);                                     
+route.get('/listid/:id ', userCtrl.listid);                                   
+route.post('/add', userCtrl.add);
+route.put('/update/:id', userCtrl.update);
+route.delete('/delete/:id', userCtrl.delete);
 
 
-module.exports= route
+
+
+module.exports = route
