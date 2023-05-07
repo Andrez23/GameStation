@@ -1,29 +1,33 @@
 const { Schema, model } = require('mongoose')
 //const mongoosePaginate = require('mongoose-paginate-v2');
 
-const userSchema = new Schema({
-    documento: {
+const facturaSchema = new Schema({
+    documento_usuario: {
         type: Number,
         required: true,
     },
-    tipo_de_documento: {
+    documento_empleado: {
+        type: Number,
+        required: true,
+    },
+    id_categoria: {
         type: String,
         required: true,
     },
-    name:{
+    id_pelicula:{
         type: String,
         required: true
     },
-    lastname:{
+    fecha_venta:{
         type: String,
         require: true,
     },
-    email:{
+    fecha_devolucion:{
         type: String,
         require: true,
         unique: true,
     },
-    salary:{
+    total:{
         type: Number,
         default: 0,
     },
@@ -32,6 +36,6 @@ const userSchema = new Schema({
         timestamps: true
     });
 
-    //userSchema.plugin(mongoosePaginate)
+    //facturaSchema.plugin(mongoosePaginate)
 
-module.exports = model('users', userSchema);
+module.exports = model('factura', facturaSchema);

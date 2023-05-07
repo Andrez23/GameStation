@@ -39,7 +39,7 @@ userCtrl.listid= async (req, res) =>{
 
 userCtrl.add = async (req,res) =>{
     try{
-        const {name, lastname, email, salary} = req.body
+        const {name, lastname, email, salary, documento, tipo_de_documento} = req.body
         if (!name || name.trim()===""){
             return res.status(400).json({
                 ok:false,
@@ -60,6 +60,8 @@ userCtrl.add = async (req,res) =>{
             lastname,
             email,
             salary,
+            documento,
+            tipo_de_documento,
         })
 
         await newUser .save()
@@ -91,12 +93,16 @@ userCtrl.update= async (req, res) => {
         const lastname = req.body.lastname || user.lastname;
         const email = req.body.email || user.email;
         const salary = req.body.salary || user.salary;
+        const documento = req.body.documento || user.documento;
+        const tipo_de_documento = req.body.tipo_de_documento || user.tipo_de_documento;
 
         const userUpdate = {
             name,
             lastname,
             email,
             salary,
+            documento,
+            tipo_de_documento,
         };
         await user.updateOne(userUpdate);
         res.json({ 
