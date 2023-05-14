@@ -1,9 +1,9 @@
-const empleadoCtrl= {}
-const empleadoModel = require("../models/empleado.model")
+const empleadosCtrl= {}
+const empleadosModel = require("../models/empleados.model")
 
-empleadoCtrl.list = async(req, res) =>{
+empleadosCtrl.list = async(req, res) =>{
     try{
-        const empleados = await empleadoModel.find();
+        const empleados = await empleadosModel.find();
         res.json ({
             ok:true,
             empleados
@@ -17,15 +17,15 @@ empleadoCtrl.list = async(req, res) =>{
     }
 }
 
-empleadoCtrl.listid= async (req, res) =>{
+empleadosCtrl.listid= async (req, res) =>{
     try{
         const {id} = req.params;
-        const empleado= await empleadoModel.findByid({_id:id})
+        const empleado= await empleadosModel.findByid({_id:id})
 
         if (!empleado){
             return res.status(404).json({
                 ok: false,
-                message: "empleado no encontrado"
+                message: "Empleado no encontrado"
             });
         }
         res.json({ok: true, empleado});
@@ -37,9 +37,9 @@ empleadoCtrl.listid= async (req, res) =>{
     }
 };
 
-empleadoCtrl.add = async (req,res) =>{
+empleadosCtrl.add = async (req,res) =>{
     try{
-        const {id_empleado, documento_usuario, documento_empleado, id_categoria, id_pelicula, fecha_venta, fecha_devolucion, total} = req.body
+        const {id_empleado, documento_empleado, nombre, apellido, cargo, salario, seguro} = req.body
         if (!id_empleado || id_empleado.trim()===""){
             return res.status(400).json({
                 ok:false,
@@ -47,23 +47,22 @@ empleadoCtrl.add = async (req,res) =>{
             })
         }
 
-        const verificar = await empleadoModel.findOne({documento_empleado})
+        const verificar = await empleadosModel.findOne({documento_empleado})
         if (verificar){
             return res.json({
                 ok:false,
-                message: "El correo ya esta registrado con otro usuario"
+                message: "El documento ya esta registrado con otro empleado"
             });
         }
 
-        const newempleado = new empleadoModel({
-            id_empleado,
-            documento_usuario,
+        const newempleado = new empleadosModel({
+            id_empleado,                           //campos que podemos agregar en el modelo
             documento_empleado,
-            id_categoria,
-            id_pelicula,
-            fecha_venta,
-            fecha_devolucion,
-            total,
+            nombre, 
+            apellido, 
+            cargo, 
+            salario, 
+            seguro,
         })
 
         await newempleado .save()
@@ -79,41 +78,39 @@ empleadoCtrl.add = async (req,res) =>{
     }
 }
 
-empleadoCtrl.update= async (req, res) => {
+empleadosCtrl.update= async (req, res) => {
     try{
         const {id}= req.params
-        const empleado= await empleadoModel.findById({_id:id})
+        const empleados= await empleadosModel.findById({_id:id})
 
-        if (!empleado) {
+        if (!empleados) {
             return res.status(404).json({
                 ok:false,
-                message: "empleado no encontrada"
+                message: "empleado no encontrado"
             });
         }
 
         const id_empleado= req.body.id_empleado || empleado.id_empleado;  //todo este bloque trae la informacion y la muestra
-        const documento_usuario = req.body.documento_usuario || empleado.documento_usuario;
         const documento_empleado = req.body.documento_empleado || empleado.documento_empleado;
-        const id_categoria = req.body.id_categoria || empleado.id_categoria;
-        const id_pelicula = req.body.id_pelicula || empleado.id_pelicula;
-        const fecha_venta = req.body.fecha_venta || empleado.fecha_venta;
-        const fecha_devolucion = req.body.fecha_devolucion || empleado.fecha_devolucion;
-        const total = req.body.total || empleado.total;
+        const nombre = req.body.nombre || empleado.nombre;
+        const apellido = req.body.apellido || empleado.apellido;
+        const cargo = req.body.cargo || empleado.cargo;
+        const salario = req.body.salario || empleado.salario;
+        const seguro = req.body.seguro || empleado.seguro;
 
-        const empleadoUpdate = {
+        const empleadosUpdate = {
             id_empleado,
-            documento_usuario,
             documento_empleado,
-            id_categoria,
-            id_pelicula,
-            fecha_venta,
-            fecha_devolucion,
-            total,
+            nombre,
+            apellido,
+            cargo,
+            salario,
+            seguro,
         };
-        await empleado.updateOne(empleadoUpdate);
+        await empleados.updateOne(empleadosUpdate);
         res.json({ 
             ok:true,
-            message: "empleado actualizada",
+            message: "empleado actualizado",
         })
     } catch (error) {
         res.satus(500).json({
@@ -123,15 +120,15 @@ empleadoCtrl.update= async (req, res) => {
     }
 }
 
-empleadoCtrl.delete= async(req, res) =>{
+empleadosCtrl.delete= async(req, res) =>{
     try {
         const{id}=req.params;
-        const empleado = await empleadoModel.findById({_id:id});
+        const empleado = await empleadosModel.findById({_id:id});
 
         if(!empleado){
             return res.status(404).json({
                 ok:false,
-                message: "empleado no econtrada"
+                message: "empleado no econtrado"
             });
         }
         await empleado.deleteOne()
@@ -146,4 +143,4 @@ empleadoCtrl.delete= async(req, res) =>{
 };
 
 
-module.exports = empleadoCtrl;
+module.exports = empleadosCtrl;

@@ -16,6 +16,7 @@ app.use(cors({ origin: "*" })); /*Cors nos sirve para permitir conexiones desde 
 
 app.use("/api/user", require("./routes/user.route"))/*rutas, o vistas */
 app.use("/api/factura", require("./routes/factura.route"))
+app.use("/api/empleados", require("./routes/empleados.route"))
 
 
 app.listen(app.get("Port"), () => {
