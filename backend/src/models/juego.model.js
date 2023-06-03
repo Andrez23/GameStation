@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose')
 //const mongoosePaginate = require('mongoose-paginate-v2');
 
-const empleadosSchema = new Schema({
-    documento_empleado: {
+const juegoSchema = new Schema({
+    id_juego: {
         type: Number,
         required: true,
     },
@@ -10,27 +10,26 @@ const empleadosSchema = new Schema({
         type: String,
         required: true,
     },
-    apellido: {
+    descripción: {
         type: String,
         required: true,
     },
-    cargo: {
-        type: String,
-        required: true,
-    },
-    salario: {
+    precio:{
         type: Number,
-        required: true,
+        required: true
     },
-    seguro: {
+    categoría:{
         type: String,
-        required: true,
+        require: true,
+    },
+    subcategoría:{
+        type: String,
     },
 },
     {
         timestamps: true
     });
 
-    //empleadosSchema.plugin(mongoosePaginate)
+    //facturaSchema.plugin(mongoosePaginate)
 
-module.exports = model('empleados', empleadosSchema);
+module.exports = model('juego', juegoSchema);

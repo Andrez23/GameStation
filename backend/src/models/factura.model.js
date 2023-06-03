@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose')
 //const mongoosePaginate = require('mongoose-paginate-v2');
 
 const facturaSchema = new Schema({
-    id_factura: {
+    codigo_factura: {
         type: Number,
         required: true,
     },
@@ -25,11 +25,6 @@ const facturaSchema = new Schema({
     fecha_venta:{
         type: Date,
         require: true,
-    },
-    fecha_devolucion:{
-        type: String,
-        require: true,
-        unique: true,
     },
     total:{
         type: Number,

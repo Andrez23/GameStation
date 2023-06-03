@@ -20,6 +20,7 @@ app.use("/api/empleados", require("./routes/empleados.route"))
 app.use("/api/subcategia", require("./routes/subcategoria.route"))
 app.use("/api/cliente", require("./routes/cliente.route"))
 app.use("/api/categoria", require("./routes/categoria.route"))
+app.use("/api/juego", require("./routes/juego.route"))
 
 
 
