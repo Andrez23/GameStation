@@ -22,6 +22,18 @@ const clienteSchema = new Schema({
         type: String,
         require: true,
     },
+    correoElectronico: {
+        type: String,
+        require: true,
+    },
+    númeroAuxiliar:{
+        type: Number,
+        require: true,
+    },
+    fechaNacimiento:{
+        type: String,
+        require: true,
+    }
 },
     {
         timestamps: true

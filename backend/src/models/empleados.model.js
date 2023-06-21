@@ -6,11 +6,19 @@ const empleadosSchema = new Schema({
         type: Number,
         required: true,
     },
-    nombre: {
+    primerNombre: {
         type: String,
         required: true,
     },
-    apellido: {
+    segundoNombre: {
+        type: String,
+        required: true,
+    },
+    primerApellido: {
+        type: String,
+        required: true,
+    },
+    segundoApellido: {
         type: String,
         required: true,
     },

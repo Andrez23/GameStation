@@ -38,26 +38,31 @@ clienteCtrl.listid = async (req, res) => {
 
 clienteCtrl.add = async (req, res) => {
   try {
-    const { id_cliente, nombre, descripcion } = req.body;
-    if (!id_cliente || id_cliente.trim() === "") {
+    const { documento_usuario, nombre,apellido,telefono, direccion,correoElectronico, númeroAuxiliar, fechaNacimiento } = req.body;
+    if (!documento_usuario || documento_usuario.trim() === "") {
       return res.status(400).json({
         ok: false,
-        message: "El campo id_cliente es requerido y no puede estar vacío",
+        message: "El campo documento_usuario es requerido y no puede estar vacío",
       });
     }
 
-    const verificar = await clienteModel.findOne({ id_cliente });
+    const verificar = await clienteModel.findOne({ documento_usuario});
     if (verificar) {
       return res.json({
         ok: false,
-        message: "El cliente ya está registrado con otro empleado",
+        message: "El cliente ya está registrado con otro documento",
       });
     }
 
     const newCliente = new clienteModel({
-      id_cliente,
+      documento_usuario,
       nombre,
-      descripcion,
+      apellido,
+      telefono,
+      direccion,
+      correoElectronico,
+      númeroAuxiliar,
+      fechaNacimiento,
     });
 
     await newCliente.save();
@@ -85,14 +90,24 @@ clienteCtrl.update = async (req, res) => {
       });
     }
 
-    const id_cliente = req.body.id_cliente || cliente.id_cliente;
+    const documento_usuario = req.body.documento_usuario || cliente.documento_usuario
     const nombre = req.body.nombre || cliente.nombre;
-    const descripcion = req.body.descripcion || cliente.descripcion;
+    const apellido = req.body.apellido || cliente.apellido;
+    const telefono = req.body.telefono || cliente.telefono;
+    const direccion = req.body.direccion || cliente.direccion;
+    const correoElectronico = req.body.correoElectronico || cliente.correoElectronico;
+    const númeroAuxiliar = req.body.númeroAuxiliar || cliente.númeroAuxiliar;
+    const fechaNacimiento = req.body.fechaNacimiento || cliente.fechaNacimiento;
 
     const clienteUpdate = {
-      id_cliente,
+      documento_usuario,
       nombre,
-      descripcion,
+      apellido,
+      telefono,
+      direccion,
+      correoElectronico,
+      númeroAuxiliar,
+      fechaNacimiento,
     };
     await cliente.updateOne(clienteUpdate);
     res.json({

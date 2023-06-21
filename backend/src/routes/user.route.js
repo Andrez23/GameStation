@@ -1,7 +1,7 @@
-const { Router } = require("express");
-const userCtrl = require('../controllers/user.controller');
+const { Router } = require("express"); //Importar rutas de express
+const userCtrl = require('../controllers/user.controller'); //importar controlador
 //const validarCampos = require("../middleware/Validar");
-const route = Router();
+const route = Router(); //Contiene todo lo de "Router"
 
 route.get('/list', userCtrl.list);                                     
 route.get('/listid/:id ', userCtrl.listid);                                   

@@ -39,7 +39,7 @@ empleadosCtrl.listid= async (req, res) =>{
 
 empleadosCtrl.add = async (req,res) =>{
     try{
-        const {id_empleado, documento_empleado, nombre, apellido, cargo, salario, seguro} = req.body
+        const {id_empleado, documento_empleado, primerNombre, segundoNombre, primerApellido, segundoApellido, cargo, salario, seguro} = req.body
         if (!id_empleado || id_empleado.trim()===""){
             return res.status(400).json({
                 ok:false,
@@ -58,8 +58,10 @@ empleadosCtrl.add = async (req,res) =>{
         const newempleado = new empleadosModel({
             id_empleado,                           //campos que podemos agregar en el modelo
             documento_empleado,
-            nombre, 
-            apellido, 
+            primerNombre,
+            segundoNombre, 
+            primerApellido,
+            segundoApellido, 
             cargo, 
             salario, 
             seguro,
@@ -92,8 +94,10 @@ empleadosCtrl.update= async (req, res) => {
 
         const id_empleado= req.body.id_empleado || empleado.id_empleado;  //todo este bloque trae la informacion y la muestra
         const documento_empleado = req.body.documento_empleado || empleado.documento_empleado;
-        const nombre = req.body.nombre || empleado.nombre;
-        const apellido = req.body.apellido || empleado.apellido;
+        const primerNombre = req.body.primerNombre || empleado.primerNombre;
+        const segundoNombre = req.body.segundoNombre || empleado.segundoNombre;
+        const primerApellido = req.body.primerApellido || empleado.primerApellido;
+        const segundoApellido = req.body.segundoApellido || empleado.segundoApellido;
         const cargo = req.body.cargo || empleado.cargo;
         const salario = req.body.salario || empleado.salario;
         const seguro = req.body.seguro || empleado.seguro;
@@ -101,8 +105,10 @@ empleadosCtrl.update= async (req, res) => {
         const empleadosUpdate = {
             id_empleado,
             documento_empleado,
-            nombre,
-            apellido,
+            primerNombre,
+            segundoNombre,
+            primerApellido,
+            segundoApellido,
             cargo,
             salario,
             seguro,

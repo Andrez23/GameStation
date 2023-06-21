@@ -3,7 +3,7 @@ const userModel = require("../models/user.model")
 
 userCtrl.list = async(req, res) =>{
     try{
-        const users = await userModel.find();
+        const users = await userModel.find(); //El .find guardara todos los usuarios del modelo
         res.json ({
             ok:true,
             users
@@ -47,7 +47,7 @@ userCtrl.add = async (req,res) =>{
             })
         }
 
-        const verificar = await userModel.findOne({email})
+        const verificar = await userModel.findOne({email}) //Nos permite saber si el correo de un usuario ya existe
         if (verificar){
             return res.json({
                 ok:false,
@@ -64,7 +64,7 @@ userCtrl.add = async (req,res) =>{
             tipo_de_documento,
         })
 
-        await newUser .save()
+        await newUser .save() //proceso asincronico, es decir, lleva tiempo
         res.json({
             ok:true,
             newUser
@@ -82,7 +82,7 @@ userCtrl.update= async (req, res) => {
         const {id}= req.params
         const user= await userModel.findById({_id:id})
 
-        if (!user) {
+        if (!user) {   //La negacion en el susario se refiere a si el "si, el usuario no existe"
             return res.status(404).json({
                 ok:false,
                 message: "Usuario no encontrado"
@@ -125,7 +125,7 @@ userCtrl.delete= async(req, res) =>{
         if(!user){
             return res.status(404).json({
                 ok:false,
-                message: "usuario no econtrado"
+                message: "usuario no encontrado"
             });
         }
         await user.deleteOne()
