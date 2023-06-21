@@ -1,116 +1,154 @@
-.contenedor {
-    max-width: 800px;
+/* Estilos generales */
+.container {
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
   }
   
-  .uno {
+  /* Estilos para el formulario */
+  .container_1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  
+  .container_2 {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crud {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .body {
     display: flex;
     justify-content: center;
   }
   
-  .dos {
+  .form_content {
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .tres {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .cuatro {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333333;
-  }
-  
-  .crud-contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 300px;
   }
   
   .form-control {
-    margin-bottom: 10px;
-    padding: 10px;
     width: 100%;
-    border-radius: 5px;
-    border: 1px solid #cccccc;
-  }
-  
-  .list-group {
-    margin-top: 40px;
-  }
-  
-  .list-group-item {
+    padding: 8px;
     margin-bottom: 10px;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   
-  .list-group-numbered li:before {
-    content: counter(list-item, decimal);
-    counter-increment: list-item;
-    margin-right: 10px;
-    color: #333333;
-    font-weight: bold;
-  }
-  
-  .list-group-item .btn {
-    font-size: 16px;
+  .btn_form {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    background: linear-gradient(90deg, rgb(191, 28, 107) 44%, rgba(49, 207, 221, 0.827) 62%);
+    background-color: #724caf;
     border: none;
-    transition: all 0.3s ease-in-out;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
-  .list-group-item .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn-primary,
-  .btn-danger,
-  .btn-warning {
-    display: block;
+  /* Estilos para la tabla */
+  .table_info {
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto 10px;
+    border-collapse: collapse; /*esto junta los campos de la tabla*/
+  }
+  
+  .table_info2 {
+    background-color: #f0f0f0;
+  }
+  
+  .table_info th,  /*casi toda la tabla*/
+  .table_info td
+  .table_info th,
+  .table_info td {
+    padding: 8px;
+    border: 2px solid #ccc;
+    
+  }
+  
+  .table_info th {   /*Esta es la cabecera de la tabla*/
+    background-color: gray;
+    color: white;
+    
+  }
+  
+  .table_info tbody tr:nth-child(even) { /*esto le da el color blanco a la fila 2 de la tabla*/
+    background-color: gray;
+  }
+  
+  .table_info tbody td {  /*los campos de la tabla, se centran*/
     text-align: center;
   }
   
-  .btn-primary {
-    background-color: #007bff;
-    color: #ffffff;
+  .btn_D,
+  .btn_W {
+    margin-right: 5px;
+    cursor: pointer;
   }
   
-  .btn-primary:hover {
-    background-color: #0069d9;
+  .btn_D {  /*Boton de borrar*/
+    color: aqua;
   }
   
-  .btn-danger {
-    background-color: #dc3545;
-    color: #ffffff;
+  .btn_W { /*boton de editar*/
+    color: orange;
   }
+
+
+  /*Medias para el formulario*/
+  /*Estilos para resoluciones más pequeñas */
+@media screen and (max-width: 600px) {
+    .container_1 {
+      flex-direction: column;
+      align-items: center;
+    }
   
-  .btn-danger:hover {
-    background-color: #c82333;
+    .container_2 {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .form_content {
+      max-width: 100%;
+    }
+
+    .btn_form {
+        width: 100%;
+        padding: 10px;
+      
+      }
   }
+
+
+
+  /* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .table_info th,
+    .table_info td {
+      padding: 4px;
+      font-size: 12px;
+    }
+    
+    .btn_D,
+    .btn_W {
+      font-size: 12px;
+    }
+  }
+
+
   
-  .btn-warning {
-    background-color: #ffc107;
-    color: #ffffff;
-  }
   
-  .btn-warning:hover {
-    background-color: #e0a800;
-  }
   
   
   

@@ -4,8 +4,9 @@
 }
 
 body{
-    background: rgb(16,0,36);
-    background: linear-gradient(90deg, rgba(16,0,36,1) 0%, rgba(103,9,121,0.8799894957983193) 70%, rgba(15,154,232,1) 100%);
+  
+    background: rgb(158,11,215);
+    background: linear-gradient(90deg, rgba(158,11,215,0.9192051820728291) 44%, rgba(39,165,201,0.8267682072829132) 58%);
 }
 
 .App {
