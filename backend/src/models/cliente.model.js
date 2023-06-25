@@ -5,6 +5,7 @@ const clienteSchema = new Schema({
     documento_usuario: {
         type: Number,
         required: true,
+        unique: true,
     },
     nombre: {
         type: String,
@@ -23,6 +24,7 @@ const clienteSchema = new Schema({
     correoElectrónico: {
         type: String,
         require: true,
+        unique: true,
     },
     númeroAuxiliar:{
         type: Number,
