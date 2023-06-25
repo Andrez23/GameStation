@@ -3,7 +3,14 @@ const clienteModel = require("../models/cliente.model");
 
 clienteCtrl.list = async (req, res) => {
   try {
-    const clientes = await clienteModel.find();
+    const limit = parseInt(req.query.limit) || 10;
+    const page=parseInt(req.query.page) || 1;
+    const options ={
+        limit,
+        page
+    };
+    //const clientes = await clienteModel.find();
+    const clientes = await clienteModel.paginate({},options);
     res.json({
       ok: true,
       clientes,
@@ -38,7 +45,7 @@ clienteCtrl.listid = async (req, res) => {
 
 clienteCtrl.add = async (req, res) => {
   try {
-    const { documento_usuario, nombre,apellido,telefono, direccion,correoElectronico, númeroAuxiliar, fechaNacimiento } = req.body;
+    const { documento_usuario, nombre, apellido, teléfono, dirección, correoElectrónico, númeroAuxiliar, fechaNacimiento } = req.body;
     if (!documento_usuario || documento_usuario.trim() === "") {
       return res.status(400).json({
         ok: false,
@@ -50,7 +57,7 @@ clienteCtrl.add = async (req, res) => {
     if (verificar) {
       return res.json({
         ok: false,
-        message: "El cliente ya está registrado con otro documento",
+        message: "El documento ya está registrado con otro usuario",
       });
     }
 
@@ -58,9 +65,9 @@ clienteCtrl.add = async (req, res) => {
       documento_usuario,
       nombre,
       apellido,
-      telefono,
-      direccion,
-      correoElectronico,
+      teléfono,
+      dirección,
+      correoElectrónico,
       númeroAuxiliar,
       fechaNacimiento,
     });
@@ -93,9 +100,9 @@ clienteCtrl.update = async (req, res) => {
     const documento_usuario = req.body.documento_usuario || cliente.documento_usuario
     const nombre = req.body.nombre || cliente.nombre;
     const apellido = req.body.apellido || cliente.apellido;
-    const telefono = req.body.telefono || cliente.telefono;
-    const direccion = req.body.direccion || cliente.direccion;
-    const correoElectronico = req.body.correoElectronico || cliente.correoElectronico;
+    const teléfono = req.body.teléfono || cliente.teléfono;
+    const dirección = req.body.dirección || cliente.dirección;
+    const correoElectrónico = req.body.correoElectrónico || cliente.correoElectrónico;
     const númeroAuxiliar = req.body.númeroAuxiliar || cliente.númeroAuxiliar;
     const fechaNacimiento = req.body.fechaNacimiento || cliente.fechaNacimiento;
 
@@ -103,9 +110,9 @@ clienteCtrl.update = async (req, res) => {
       documento_usuario,
       nombre,
       apellido,
-      telefono,
-      direccion,
-      correoElectronico,
+      teléfono,
+      dirección,
+      correoElectrónico,
       númeroAuxiliar,
       fechaNacimiento,
     };

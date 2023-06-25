@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose')
-//const mongoosePaginate = require('mongoose-paginate-v2');
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const clienteSchema = new Schema({
     documento_usuario: {
@@ -14,31 +14,27 @@ const clienteSchema = new Schema({
         type: String,
         required: true,
     },
-    telefono:{
+    teléfono:{
         type: Number,
-        required: true
     },
-    direccion:{
+    dirección:{
         type: String,
-        require: true,
     },
-    correoElectronico: {
+    correoElectrónico: {
         type: String,
         require: true,
     },
     númeroAuxiliar:{
         type: Number,
-        require: true,
     },
     fechaNacimiento:{
         type: String,
-        require: true,
     }
 },
     {
         timestamps: true
     });
 
-    //facturaSchema.plugin(mongoosePaginate)
+clienteSchema.plugin(mongoosePaginate)
 
 module.exports = model('cliente', clienteSchema);

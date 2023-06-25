@@ -3,7 +3,14 @@ const userModel = require("../models/user.model")
 
 userCtrl.list = async(req, res) =>{
     try{
-        const users = await userModel.find(); //El .find guardara todos los usuarios del modelo
+        const limit = parseInt(req.query.limit) || 10;
+        const page=parseInt(req.query.page) || 1;
+        const options ={
+            limit,
+            page
+        };
+        //const users = await userModel.find() //El .find guardara todos los usuarios del modelo
+        const users = await userModel.paginate({},options);
         res.json ({
             ok:true,
             users
