@@ -6,7 +6,7 @@
 body{
   
     background: rgb(158,11,215);
-    background: linear-gradient(90deg, rgba(158,11,215,0.9192051820728291) 44%, rgba(39,165,201,0.8267682072829132) 58%);
+    background: linear-gradient(90deg, rgba(219, 206, 224, 0.919) 60%, rgba(1, 2, 2, 0.293) 90%); 
 }
 
 .App {
